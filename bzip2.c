@@ -129,6 +129,7 @@
 #   include <io.h>
 #   include <fcntl.h>
 #   include <sys/stat.h>
+#define STDERR_FILENO _fileno(stderr)
 
 #   define NORETURN       /**/
 #   define PATH_SEP       '\\'

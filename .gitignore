@@ -7,3 +7,4 @@
 *.exe
 bzip2
 bzip2recover
+*.rc

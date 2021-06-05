@@ -1,0 +1,35 @@
+#include <winver.h>
+#ifndef DEBUG
+#define VER_DEBUG 0
+#else
+#define VER_DEBUG VS_FF_DEBUG
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     @BZIP2_VERSION_MAJOR@,@BZIP2_VERSION_MINOR@,@BZIP2_VERSION_MICRO@,0
+PRODUCTVERSION  @BZIP2_VERSION_MAJOR@,@BZIP2_VERSION_MINOR@,@BZIP2_VERSION_MICRO@,0
+FILEFLAGSMASK   VS_FF_DEBUG
+FILEFLAGS       VER_DEBUG
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "04090000"
+        BEGIN
+            VALUE "CompanyName",      "Julian Seward\0"
+            VALUE "FileDescription",  "a program for lossless, block-sorting data compression\0"
+            VALUE "FileVersion",      "@BZIP2_VERSION@\0"
+            VALUE "InternalName",     "bzip2\0"
+            VALUE "LegalCopyright",   "Copyright (C) 1996-2019 Julian Seward <jseward@acm.org>\0"
+            VALUE "OriginalFilename", "bzip2\0"
+            VALUE "ProductName",      "bzip2\0"
+            VALUE "ProductVersion",   "@BZIP2_VERSION@\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 0
+    END
+END
