@@ -18,7 +18,7 @@
    in the file LICENSE.
    ------------------------------------------------------------------ */
 
-#if defined(_WIN32)
+#if defined(_WIN32) && defined(BZLIB_SHARED)
 #    if defined(__GNUC__)
 #        define BZLIB_PUBLIC  __attribute__((dllexport))
 #        define BZLIB_PRIVATE
@@ -26,6 +26,9 @@
 #        define BZLIB_PUBLIC  __declspec(dllexport)
 #        define BZLIB_PRIVATE
 #    endif
+#else
+#define BZLIB_PUBLIC
+#define BZLIB_PRIVATE
 #endif
 
 #ifndef _BZLIB_H
