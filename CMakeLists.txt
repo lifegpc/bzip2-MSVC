@@ -18,7 +18,7 @@ set(LIB_OBJS blocksort.c huffman.c crctable.c randtable.c compress.c decompress.
 
 add_library(libbz2-static STATIC ${LIB_OBJS})
 add_library(libbz2 SHARED ${LIB_OBJS} ${DLLRC})
-target_compile_definitions(libbz2 PRIVATE BZIP2_SHARED)
+target_compile_definitions(libbz2 PRIVATE BZLIB_SHARED)
 set_target_properties(libbz2 PROPERTIES PUBLIC_HEADER "bzlib.h")
 add_executable(bzip2 bzip2.c ${PRORC})
 target_link_libraries(bzip2 libbz2)
